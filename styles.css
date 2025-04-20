@@ -1,0 +1,186 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #eaffcd;
+    font-family: "Raleway", sans-serif;
+    color: #3a472c;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .btn {
+    position: fixed;
+    margin-top: 150px;
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #79ad09;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(26, 43, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #eaffcd;
+    box-shadow: 0 0 30px rgba(200, 255, 70, 0.5);
+    border: 1px solid #bbee74;
+    transform: scale(1.05);
+  }
+  
+  .btn img {
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  
+  /* TÍTULO h1 */
+  h1 {
+    font-family: "Amatic SC", sans-serif;
+    font-weight: 700;
+    color: #79ad09;
+    font-size: 40dvh; /* Responsivo */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+  }
+  
+  /* IMAGEM DO MOJITO */
+  .mojito {
+    position: fixed;
+    height: 50dvh;
+    top: 50%;
+    left: 50%;
+    transform: rotate(25deg) translate(-80%, -40%);
+    filter: drop-shadow(12px 16px 20px rgba(4, 22, 0, 0.35));
+    z-index: 10;
+  }
+ 
+  /* TEXTO */
+  .text {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+
+  .leaf1,
+  .leaf2 {
+  position: fixed;         /* Fixa na tela */
+  z-index: 5;              /* Fica acima do fundo, mas pode ajustar */
+  height: 40dvh;            /* Ou o tamanho que quiser */
+  filter: blur(3px);       /* Aplica o desfoque */
+  pointer-events: none;    /* Não atrapalha cliques embaixo */
+}
+
+/* Superior esquerda */
+.leaf1 {
+  top: 5%;
+  left: -1%;
+  margin: -100px;           /* Distância das bordas */
+  transform: rotate(120deg)
+}
+
+/* Inferior direita */
+.leaf2 {
+  bottom: 0;
+  right: 0;
+  margin: -100px;
+  transform: rotate(-20deg)
+}
+
+/* RESPONSIVIDADE PARA MOBILE */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 8rem; /* menor título no mobile */
+      transform: translate(-50%, -50%);
+    }
+  
+    .mojito {
+      height: 25dvh; /* menor imagem no mobile */
+      transform: rotate(20deg) translate(-60%, -40%);
+    }
+
+    .leaf1,
+    .leaf2 {
+    position: fixed;         /* Fixa na tela */
+    z-index: 5;              /* Fica acima do fundo, mas pode ajustar */
+    height: 20dvh;            /* Ou o tamanho que quiser */
+    filter: blur(3px);       /* Aplica o desfoque */
+    pointer-events: none;    /* Não atrapalha cliques embaixo */
+  }
+  
+  /* Superior esquerda */
+  .leaf1 {
+    top: 17%;
+    left: -1%;
+    margin: -50px;           /* Distância das bordas */
+    transform: rotate(120deg)
+  }
+  
+  /* Inferior direita */
+  .leaf2 {
+    bottom: 0;
+    right: 0;
+    margin: -50px;
+    transform: rotate(-20deg)
+  }
+  }
+  
+  #fall-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* para não atrapalhar os cliques */
+    z-index: 1000; /* acima de tudo */
+  }
+  
+  .falling-object {
+    position: fixed;
+    filter: drop-shadow(2px 6px 20px rgba(4, 22, 0, 0.35));
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    animation: fall 3s linear forwards;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-50px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
